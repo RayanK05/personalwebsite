@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    font-family: 'DM sans', sans-serif;
+    color: white;
+    background: #0f0f10;
+}
+
+h1{
+    font-family: 'DM sans', sans-serif;
+    color: white;
+    text-align: center;
+    font-size:79px;
+}
+
+section {
+    position: relative;
+    display: flex;
+    padding-top: 100px ;
+}
+
+.intro-header{
+    border: 2px solid;
+    padding: 25px;
+    box-sizing: border-box;
+    height: auto;
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/SVGs/circle-scatter-haikei (1).svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 70px;
+    text-align: right;
+    margin-top: auto;
+    position: relative;
+}
+
+.spacer{
+    aspect-ratio: 900/200;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer1{
+    background-image: url("../images/SVGs/circle-scatter-haikei (1).svg");
+}
+
+svg {
+    position: relative;
+}
+
+/*.wave {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    line-height: 0;*/
+/*}*/
+
+/*.wave svg {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    width: calc(126% + 1.3px);*/
+/*    height: 121px;*/
+/*}*/
+
