@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box; /* Ensures padding/border don't expand width/height unexpectedly */
+}
+
+
 body {
     margin: 0;
     font-family: 'DM sans', sans-serif;
@@ -5,42 +10,52 @@ body {
     background: #0f0f10;
 }
 
-h1{
-    font-family: 'DM sans', sans-serif;
-    color: white;
-    text-align: center;
-    font-size:79px;
-}
-
-section {
+.homepage-banner {
     position: relative;
-    display: flex;
-    padding-top: 100px ;
-}
-
-.intro-header{
-    border: 2px solid;
-    padding: 25px;
-    box-sizing: border-box;
-    height: auto;
-    width: 50%;
-    float: left;
-    text-align: left;
-}
-
-
-.banner{
     width: 100%;
-    height: 100vh;
-    background-image: url('../images/SVGs/circle-scatter-haikei (1).svg');
+    min-height: 100vh; /* Full screen */
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
-    color: white;
-    font-size: 70px;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Center child element vertically */
+    justify-content: center; /* Center child element horizontally */
+    overflow: hidden;
+    padding: 0 5vw;
+}
+.banner-content{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: flex-start; /* Start vertically, we'll shift down manually */
+    padding-top: 10vh; /* Pushes content ~10% down screen */
+}
+.intro-header {
+    width: 50%;
+    text-align: left;
+    padding: 25px;
+}
+
+.code-tag {
+    width: 50%;
     text-align: right;
-    margin-top: auto;
-    position: relative;
+    padding: 25px;
+}
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    font-size: 6rem;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.title {
+    font-size: 7rem; /* Larger for left-side intro */
+}
+
+.code-tag h1 {
+    font-size: 6rem;
 }
 
 .spacer{
@@ -50,10 +65,76 @@ section {
     background-position: center;
     background-size: cover;
 }
-
 .layer1{
     background-image: url("../images/SVGs/circle-scatter-haikei (1).svg");
 }
+.spacer2{
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer2{
+    background-image: url("../images/SVGs/layered-waves-haikei.svg");
+}
+
+section {
+    position: relative;
+    display: flex;
+}
+
+
+/*.typewriter h1 {*/
+/*    font-size: 5rem;*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*    margin: 0;*/
+/*    line-height: 1.2;*/
+/*}*/
+
+/*!* Shared typewriter base *!*/
+/*.typewriter span {*/
+/*    display: inline-block;*/
+/*    white-space: nowrap;*/
+/*    overflow: hidden;*/
+/*    border-right: 2px solid white;*/
+/*}*/
+
+/*!* First line animates first *!*/
+/*.line1 {*/
+/*    animation:*/
+/*            typing 2s steps(7, end) forwards,*/
+/*            cursor-hide 0s 2s forwards; !* hide cursor after 2s *!*/
+/*    border-right: 2px solid white;*/
+/*    overflow: hidden;*/
+/*    white-space: nowrap;*/
+/*    display: inline-block;*/
+/*    width: 0;*/
+/*}*/
+
+/*!* Second line animates after delay *!*/
+/*.line2 {*/
+/*    animation: typing 2s steps(7, end) 2s forwards, blink 0.75s step-end infinite;*/
+/*    width: 0;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*!* Typing and blinking keyframes *!*/
+/*@keyframes typing {*/
+/*    from { width: 0; }*/
+/*    to { width: 100%; }*/
+/*}*/
+
+/*@keyframes blink {*/
+/*    50% { border-color: transparent; }*/
+/*}*/
+/*@keyframes cursor-hide {*/
+/*    to {*/
+/*        border-right: none;*/
+/*    }*/
+/*}*/
+
 
 svg {
     position: relative;
@@ -75,3 +156,7 @@ svg {
 /*    height: 121px;*/
 /*}*/
 
+.about-me h2{
+    text-align: center;
+    align-items: center;
+}
