@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box; /* Ensures padding/border don't expand width/height unexpectedly */
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', "Times New Roman", sans-serif;
 }
 
 
@@ -177,6 +177,16 @@ svg {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 50px;
+    background-image: linear-gradient(
+            90deg,
+            #1644DB 20%,
+            #3CA0F2 50%,
+            #00FFFF 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 .about-content {
@@ -189,11 +199,11 @@ svg {
 
 .about-paragraph {
     flex: 1;
-    min-width: 300px;
+    min-width: 500px;
 }
 
 .about-paragraph p {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     line-height: 1.6;
     margin: 0;
 }
@@ -202,14 +212,19 @@ svg {
     flex: 1;
     min-width: 250px;
 }
-
-.about-bullet ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
+.bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* space between icon and text */
+    margin-bottom: 20px;
 }
 
-.about-bullet li {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+.bullet-item i {
+    font-size: 2.5rem;
+    width: 24px;
+}
+
+.bullet-item span {
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
