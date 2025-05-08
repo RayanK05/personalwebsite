@@ -9,6 +9,7 @@ body {
     font-family: 'DM sans', sans-serif;
     color: white;
     background: #0f0f10;
+    overflow-x: hidden;
 }
 
 .homepage-banner {
@@ -69,12 +70,11 @@ h1 {
 .layer1{
     background-image: url("../images/SVGs/circle-scatter-haikei (1).svg");
 }
-.spacer2{
-    aspect-ratio: 900/600;
-    width: 100%;
+.spacer2 {
+    height: 800px; /* This gives the wave enough room to show */
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-size: 100% auto; /* Maintain aspect ratio, scale to width */
+    background-position: top center; /* Show the top portion where the waves are */
 }
 .layer2{
     background-image: url("../images/SVGs/layered-waves-haikei.svg");
@@ -216,7 +216,7 @@ svg {
     display: flex;
     align-items: center;
     gap: 50px; /* space between icon and text */
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .bullet-item i {
@@ -228,3 +228,109 @@ svg {
     font-size: 1.5rem;
     line-height: 1.4;
 }
+
+/*Experince section */
+.experience{
+    background: black;
+}
+.experience-container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.experience-heading{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    background-image: linear-gradient(
+            90deg,
+            #5606f5 0%,
+            #E806E4 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+}
+.timeline {
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    background: grey;
+    width: 1px;
+    height: 95%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.timeline-item {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    float: right;
+    padding: 40px 30px 10px 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content .date {
+    right: auto;
+    left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #101010 transparent transparent;
+}
+
+.timeline-item::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 10px 30px;
+    border-radius: 4px;
+    background: #101010;
+    box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    right: -15px;
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent #101010;
+}
+
+.timeline-img {
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(
+            90deg,
+            #5606f5 0%,
+            #E806E4 100%
+    );    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+    margin-left: -15px;
+}
+
+
