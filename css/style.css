@@ -84,7 +84,15 @@ section {
     position: relative;
     display: flex;
 }
+.cursor {
+    animation: blinker 1s linear infinite;
+}
 
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
 
 /*.typewriter h1 {*/
 /*    font-size: 5rem;*/
@@ -447,4 +455,5 @@ svg {
         color: transparent;
         display: flex;
     }
+
 }
