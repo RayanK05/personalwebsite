@@ -11,6 +11,7 @@
     right: 0;
     left: 0;
     z-index: 2000;
+    border-bottom: 1px solid #1a1a1a;
 }
 .nav-shell {
     position: relative;
@@ -42,8 +43,8 @@
     color: #000000;
 }
 .otr-logo {
-    width: 120px;
-    min-width: 96px;
+    width: 80px;
+    min-width: 80px;
     transition: transform 0.2s;
 }
 .otr-logo:hover {

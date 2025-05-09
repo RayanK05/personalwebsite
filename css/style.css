@@ -214,21 +214,22 @@ svg {
 .about-bullet {
     flex: 1;
     min-width: 250px;
+    padding-left: 50px;
 }
 .bullet-item {
     display: flex;
     align-items: center;
-    gap: 50px; /* space between icon and text */
-    margin-bottom: 60px;
+    gap: 40px; /* space between icon and text */
+    margin-bottom: 50px;
 }
 
 .bullet-item i {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     width: 24px;
 }
 
 .bullet-item span {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 1.4;
 }
 @media screen and (max-width: 1024px) {
@@ -358,7 +359,7 @@ svg {
 .timeline {
     width: 80%;
     height: auto;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -366,16 +367,37 @@ svg {
 
 .timeline-content {
     background: #1f1f1f;
-    -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
     box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
     color: white;
-    padding: 1.75rem;
-    transition: 0.4s ease;
-    overflow-wrap: break-word !important;
-    /*margin: 1rem;*/
-    /*margin-bottom: 20px;*/
+    padding: 1.5rem;
     border-radius: 6px;
 }
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 6px 0;
+}
+
+.position-org {
+    font-size: 1rem;
+    margin: 0 0 4px 0;
+    font-weight: 500;
+    color: #d0d0d0;
+}
+
+.timeline-dates {
+    font-size: 0.8rem;
+    margin: 0 0 10px 0;
+    color: #aaaaaa;
+    padding-bottom: 10px;
+}
+
+.timeline-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 
 .timeline-component {
     margin: 0px 20px 20px 20px;
@@ -405,5 +427,24 @@ svg {
         background-image: linear-gradient(45deg, #5606F5, #E806E4);
         /*-webkit-transform: translateX(-50%);*/
         transform: translateX(-50%);
+    }
+    .projects-container{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .projects-heading{
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+        background-image: linear-gradient(
+                90deg,
+                #0D660D 0%,
+                #06F506 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        display: flex;
     }
 }
