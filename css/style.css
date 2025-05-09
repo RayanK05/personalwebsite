@@ -1,326 +1,412 @@
-
-html, body {
-  overflow-x: hidden;
-  box-sizing: border-box;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
+*{
+    box-sizing: border-box; /* Ensures padding/border don't expand width/height unexpectedly */
+    font-family: 'DM Sans', "Times New Roman", sans-serif;
 }
 
-  /* ------------- Homepage banner ---------------*/
-  .homepage-banner {
-    position: relative; 
+
+body {
+    margin: 0;
+    font-family: 'DM sans', sans-serif;
+    color: white;
+    background: black;
+    overflow-x: hidden;
+}
+
+.homepage-banner {
+    position: relative;
     width: 100%;
-    min-height: 100vh;
-    height:auto;
-    text-align: center;
-    overflow:hidden;
-  }
-  .background-video {
-    position: absolute;
-    width: 100vw;  
-    height: 100vh;
-    object-fit: cover; 
-    top: 0;
-    left: 0;
-    border-radius: 10px;
-  }
-
-  .Title{
-    position: absolute; 
-    bottom: 0; 
-    right: 0; 
-    margin: 10px;
-    text-shadow: 9px 5px 5px #000000 !important;
-    font-family: "Goldman", sans-serif;
-    font-size:7rem;
-    color: rgb(255, 255, 255);
-  }   
-
-  /* ---------------- Mission Section -------------- */
-  .mission-section {
+    min-height: 100vh; /* Full screen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #000000, #1a1a1a); 
-    gap: 20px;
-    padding: 40px 20px;
-    flex-wrap:wrap;
-  }
-  
-  .mission-text {
-    flex: 1;
-    padding: 20px;
+    align-items: center; /* Center child element vertically */
+    justify-content: center; /* Center child element horizontally */
+    overflow: hidden;
+    padding: 0 5vw;
+}
+.banner-content{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: flex-start; /* Start vertically, we'll shift down manually */
+    padding-top: 10vh; /* Pushes content ~10% down screen */
+}
+.intro-header {
+    width: 50%;
     text-align: left;
-    font-size: 18px;
-    line-height: 1.6;
-    max-width: 600px;
-  }
+    padding: 25px;
+}
 
-  .mission-text-heading {
-    margin-bottom: 20px;
-    font-size: 32px;
-  }
-
-  .mission-paragraph{
-    font-size: 22px;
-  }
-  
-  .bar {
-    width: 50px;
-    height: 4px;
-    /*background-color: #0077CA;*/
-    background-color: #E75D2A;
-    margin-bottom: 20px;
-  }
-  
-  .mission-image {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .mission-image img {
-    width: 100%;
-    max-width: 600px;
-    max-height: 90%;
-    height: auto;
-   
-  }
-  
-  .text-container {
-    flex: 1;
-    margin-right: 20px;
-  }
-
-  .text-container h2 {
-    font-size: 2em;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .text-container p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #f0f0f0;
-  }
-
-  .image-container {
-    flex: 1;
+.code-tag {
+    width: 50%;
     text-align: right;
-  }
+    padding: 25px;
+}
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    font-size: 6rem;
+    margin: 0;
+    line-height: 1.2;
+}
 
-  .image-container img {
-    max-width: 100%;
+.title {
+    font-size: 7rem; /* Larger for left-side intro */
+}
+
+.code-tag h1 {
+    font-size: 6rem;
+}
+
+.spacer{
+    aspect-ratio: 900/200;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer1{
+    background-image: url("../images/SVGs/circle-scatter-haikei (1).svg");
+}
+.spacer2 {
+    height: 800px; /* This gives the wave enough room to show */
+    background-repeat: no-repeat;
+    background-size: 100% auto; /* Maintain aspect ratio, scale to width */
+    background-position: top center; /* Show the top portion where the waves are */
+}
+.layer2{
+    background-image: url("../images/SVGs/layered-waves-haikei.svg");
+}
+
+section {
+    position: relative;
+    display: flex;
+}
+
+
+/*.typewriter h1 {*/
+/*    font-size: 5rem;*/
+/*    font-weight: bold;*/
+/*    color: white;*/
+/*    margin: 0;*/
+/*    line-height: 1.2;*/
+/*}*/
+
+/*!* Shared typewriter base *!*/
+/*.typewriter span {*/
+/*    display: inline-block;*/
+/*    white-space: nowrap;*/
+/*    overflow: hidden;*/
+/*    border-right: 2px solid white;*/
+/*}*/
+
+/*!* First line animates first *!*/
+/*.line1 {*/
+/*    animation:*/
+/*            typing 2s steps(7, end) forwards,*/
+/*            cursor-hide 0s 2s forwards; !* hide cursor after 2s *!*/
+/*    border-right: 2px solid white;*/
+/*    overflow: hidden;*/
+/*    white-space: nowrap;*/
+/*    display: inline-block;*/
+/*    width: 0;*/
+/*}*/
+
+/*!* Second line animates after delay *!*/
+/*.line2 {*/
+/*    animation: typing 2s steps(7, end) 2s forwards, blink 0.75s step-end infinite;*/
+/*    width: 0;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*!* Typing and blinking keyframes *!*/
+/*@keyframes typing {*/
+/*    from { width: 0; }*/
+/*    to { width: 100%; }*/
+/*}*/
+
+/*@keyframes blink {*/
+/*    50% { border-color: transparent; }*/
+/*}*/
+/*@keyframes cursor-hide {*/
+/*    to {*/
+/*        border-right: none;*/
+/*    }*/
+/*}*/
+
+
+svg {
+    position: relative;
+}
+
+/*.wave {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    overflow: hidden;*/
+/*    line-height: 0;*/
+/*}*/
+
+/*.wave svg {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    width: calc(126% + 1.3px);*/
+/*    height: 121px;*/
+/*}*/
+
+/*.about-me h2{*/
+/*    padding-top: 200px;*/
+/*    text-align: center;*/
+/*    align-items: center;*/
+
+/*}*/
+
+
+/*About me section */
+.about-me {
+    padding: 150px 6vw;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.about-heading {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    background-image: linear-gradient(
+            90deg,
+            #1644DB 20%,
+            #3CA0F2 50%,
+            #00FFFF 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.about-paragraph {
+    flex: 1;
+    min-width: 500px;
+}
+
+.about-paragraph p {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.about-bullet {
+    flex: 1;
+    min-width: 250px;
+}
+.bullet-item {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* space between icon and text */
+    margin-bottom: 60px;
+}
+
+.bullet-item i {
+    font-size: 2.5rem;
+    width: 24px;
+}
+
+.bullet-item span {
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+@media screen and (max-width: 1024px) {
+    .about-heading {
+        font-size: 3rem;
+    }
+
+    .about-paragraph p {
+        font-size: 1.5rem;
+    }
+
+    .bullet-item {
+        gap: 30px;
+    }
+
+    .bullet-item span {
+        font-size: 1.4rem;
+    }
+    .spacer2{
+        height: 900px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-paragraph, .about-bullet {
+        min-width: unset;
+        width: 100%;
+        text-align: center;
+    }
+
+    .about-heading {
+        font-size: 2.5rem;
+    }
+
+    .about-paragraph p {
+        font-size: 1.3rem;
+    }
+
+    .bullet-item {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .bullet-item i {
+        font-size: 2rem;
+    }
+
+    .bullet-item span {
+        font-size: 1.2rem;
+    }
+    .spacer2{
+        height: 850px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-me {
+        padding: 100px 4vw;
+    }
+
+    .about-heading {
+        font-size: 2rem;
+    }
+
+    .about-paragraph p {
+        font-size: 1.1rem;
+    }
+
+    .bullet-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .bullet-item span {
+        font-size: 1rem;
+    }
+}
+
+
+.hr{
+    color: #1a1a1a;
+    background-color: #1a1a1a;
+}
+/*Experience section */
+.experience{
+    background: black;
+}
+.experience-container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.experience-heading{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(
+            90deg,
+            #5606f5 0%,
+            #E806E4 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+}
+.design-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: Jost;
+}
+
+.design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline {
+    width: 80%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    }
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* -------------- Statistics Section ------------------ */
-    .stats-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 40px 10px;
-      justify-content: center;
+.timeline-content {
+    padding: 20px;
+    background: #1f1f1f;
+    -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+    box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+    border-radius: 5px;
+    color: white;
+    padding: 1.75rem;
+    transition: 0.4s ease;
+    overflow-wrap: break-word !important;
+    margin: 1rem;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
 
-      max-width: 1000px;   
-      margin: 0 auto;       
-      width: 100%;
-      box-sizing: border-box;
-    }
-        
-    .stat-box {
-      border: 2px solid #E75D2A;
-      border-radius: 20px;
-      padding: 20px;
-      text-align: center;
-      width: 100%;
-      box-sizing: border-box;
+.timeline-component {
+    margin: 0px 20px 20px 20px;
+}
 
+@media screen and (min-width: 768px) {
+    .timeline {
+        display: grid;
+        grid-template-columns: 1fr 3px 1fr;
     }
-            
-    .stat-box h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+    .timeline-middle {
+        position: relative;
+        background: #1a1a1a;
+        width: 3px;
+        height: 100%;
     }
-    
-    .stat-box h4 {
-      font-size: 1.2rem;
-      font-weight: normal;
+    .main-middle {
+        opacity: 0;
     }
-
-    /* -------- INSTAGRAM SECTION --------- */
-    
-    .instagram-section {
-      width: 100%;
-      text-align: center;
-      /*background: linear-gradient(to right, #000000); */
+    .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, #5606F5, #E806E4);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
     }
-
-    .socialMedia-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 40px; 
-    }
-
-    .socialMedia-title{
-      margin:20px;
-    }
-
-  
-    .tiktok-container {
-      flex: 1 1 300px;
-      max-width: 500px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: visible; 
-      padding-bottom: 20px; 
-    }
-
-    .instagram-container {
-      flex: 1 1 300px;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    .instagram-wrapper {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      height: auto; 
-    }
-    
-    .instagram-wrapper iframe {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border: none;
-      background: transparent;
-      display: block;
-      min-height: 500px;
-    }
-
-    .tiktok-embed {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      aspect-ratio: 4/5;
-      border: none;
-      background: transparent;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: block;
-    }
-    .tiktok-embed video {
-      width: 100%;
-      height: auto;
-      aspect-ratio: 4 / 5;
-      object-fit: contain;
-      border-radius: 10px;
-      display: block;
-    }
-
-
-/* TABLETS */
-  @media (max-width: 900px){
-    .Title{
-      font-size:4rem;
-    }
-
-    .homepage-banner{
-      width: 100%;
-      height: 100vh;
-    }
-
-    .mission-paragraph{
-      font-size: 19px;
-    }
-    
-    .mission-image{
-      display:none;
-    }
-
-    .stats-section {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .mission-section{
-      flex-direction: column;
-      text-align:center;
-    }
-
-    .socialMedia-container{
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .instagram-container iframe,
-    .tiktok-embed .tiktok-embed video{
-      aspect-ratio: auto !important;
-      height: auto;
-      width: 100%;
-      max-width: 100%;
-    }
-  }
-
-  /* Phone */
-  @media  (max-width: 480px){
-    .background-video {
-      height: 100vh;
-      width: 100vw;
-      object-position: center;    /* Center it */
-      background-color: black;    /* Fill empty space */
-    }
-    .Title{
-      font-size:4rem;
-    }
-
-    .homepage-banner{
-      width: 100%;
-      height: 100vh;
-    }
-
-    .mission-paragraph{
-      font-size: 1.2rem;
-    }
-    
-    .mission-image{
-      display:none;
-    }
-
-    .stat-box{
-      max-width:90%;
-      margin: 10px auto;
-    }
-
-    .stats-section {
-      grid-template-columns: 1fr;
-    }
-    
-    .instagram-title{
-      font-size: 13px;
-    }
-
-    .instagram-container, .tiktok-container{
-      display: flex;
-    }
-
-    .instagram-container iframe,
-    .tiktok-embed .tiktok-embed video{
-      max-width: 700px;
-      width: 100%;
-    }
-
-
-  }
-
+}
