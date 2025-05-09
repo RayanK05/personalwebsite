@@ -347,7 +347,6 @@ svg {
     align-items: center;
     justify-content: center;
     background-color: black;
-    font-family: Jost;
 }
 
 .design {
@@ -366,17 +365,15 @@ svg {
 }
 
 .timeline-content {
-    padding: 20px;
     background: #1f1f1f;
     -webkit-box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
     box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
-    border-radius: 5px;
     color: white;
     padding: 1.75rem;
     transition: 0.4s ease;
     overflow-wrap: break-word !important;
-    margin: 1rem;
-    margin-bottom: 20px;
+    /*margin: 1rem;*/
+    /*margin-bottom: 20px;*/
     border-radius: 6px;
 }
 
@@ -406,7 +403,7 @@ svg {
         height: 15px;
         border-radius: 50%;
         background-image: linear-gradient(45deg, #5606F5, #E806E4);
-        -webkit-transform: translateX(-50%);
+        /*-webkit-transform: translateX(-50%);*/
         transform: translateX(-50%);
     }
 }
