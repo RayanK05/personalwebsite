@@ -149,30 +149,6 @@ svg {
     position: relative;
 }
 
-/*.wave {*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    overflow: hidden;*/
-/*    line-height: 0;*/
-/*}*/
-
-/*.wave svg {*/
-/*    position: relative;*/
-/*    display: block;*/
-/*    width: calc(126% + 1.3px);*/
-/*    height: 121px;*/
-/*}*/
-
-/*.about-me h2{*/
-/*    padding-top: 200px;*/
-/*    text-align: center;*/
-/*    align-items: center;*/
-
-/*}*/
-
-
 /*About me section */
 .about-me {
     padding: 150px 6vw;
@@ -455,5 +431,48 @@ svg {
         color: transparent;
         display: flex;
     }
+}
+.showcaseLayout {
+    display: flex;
+    /*flex-direction: row; !* Image left, text right *!*/
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* helps responsiveness */
+    padding: 150px 6vw;
 
 }
+
+.first-project-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.image-Wrapper {
+    width: 600px;
+    height: auto;
+
+
+
+}
+.image-Wrapper img{
+    width: 600px;
+    height: auto;
+
+}
+
+.text-content {
+}
+
+.text-content h2 {
+
+}
+
+.text-content-body {
+}
+
