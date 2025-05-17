@@ -412,67 +412,100 @@ svg {
         /*-webkit-transform: translateX(-50%);*/
         transform: translateX(-50%);
     }
-    .projects-container{
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-    .projects-heading{
-        text-align: center;
-        font-size: 4rem;
-        font-weight: bold;
-        background-image: linear-gradient(
-                90deg,
-                #0D660D 0%,
-                #06F506 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-        display: flex;
-    }
-}
-.showcaseLayout {
-    display: flex;
-    /*flex-direction: row; !* Image left, text right *!*/
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap; /* helps responsiveness */
-    padding: 150px 6vw;
-
 }
 
-.first-project-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+
+.projects-container{
     max-width: 1400px;
     margin: 0 auto;
 }
+.projects-heading{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: bold;
+    background-image: linear-gradient(
+            90deg,
+            #0D660D 0%,
+            #06F506 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+}
 
-.image-Wrapper {
+.projects-cards-container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* optional: centers cards */
+    gap: 20px;               /* space between cards */
+    padding: 20px;
+}
+.card {
     width: 600px;
-    height: auto;
-
-
-
-}
-.image-Wrapper img{
-    width: 600px;
-    height: auto;
-
+    aspect-ratio: 1 / 0.7;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border: 2px solid #242424;
 }
 
-.text-content {
+.card .image-box {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
 }
 
-.text-content h2 {
-
+.card .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 90%;
+    border-radius: inherit;
+    transition: 0.5s ease-in-out;
 }
 
-.text-content-body {
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid white;
+    border-radius: inherit;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+    z-index: 1;
 }
 
+.card:hover .image-box img {
+    filter: grayscale(1) brightness(0.4);
+}
+
+.card:hover::after {
+    opacity: 1;
+    inset: 20px;
+}
+
+.content {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    opacity: 0;               /* Hide by default */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;     /* Prevent ghost hover */
+}
+
+.card:hover .content {
+    opacity: 1;               /* Show on hover */
+}
