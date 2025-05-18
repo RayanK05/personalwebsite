@@ -94,57 +94,6 @@ section {
     }
 }
 
-/*.typewriter h1 {*/
-/*    font-size: 5rem;*/
-/*    font-weight: bold;*/
-/*    color: white;*/
-/*    margin: 0;*/
-/*    line-height: 1.2;*/
-/*}*/
-
-/*!* Shared typewriter base *!*/
-/*.typewriter span {*/
-/*    display: inline-block;*/
-/*    white-space: nowrap;*/
-/*    overflow: hidden;*/
-/*    border-right: 2px solid white;*/
-/*}*/
-
-/*!* First line animates first *!*/
-/*.line1 {*/
-/*    animation:*/
-/*            typing 2s steps(7, end) forwards,*/
-/*            cursor-hide 0s 2s forwards; !* hide cursor after 2s *!*/
-/*    border-right: 2px solid white;*/
-/*    overflow: hidden;*/
-/*    white-space: nowrap;*/
-/*    display: inline-block;*/
-/*    width: 0;*/
-/*}*/
-
-/*!* Second line animates after delay *!*/
-/*.line2 {*/
-/*    animation: typing 2s steps(7, end) 2s forwards, blink 0.75s step-end infinite;*/
-/*    width: 0;*/
-/*    display: inline-block;*/
-/*}*/
-
-/*!* Typing and blinking keyframes *!*/
-/*@keyframes typing {*/
-/*    from { width: 0; }*/
-/*    to { width: 100%; }*/
-/*}*/
-
-/*@keyframes blink {*/
-/*    50% { border-color: transparent; }*/
-/*}*/
-/*@keyframes cursor-hide {*/
-/*    to {*/
-/*        border-right: none;*/
-/*    }*/
-/*}*/
-
-
 svg {
     position: relative;
 }
@@ -508,4 +457,17 @@ svg {
 
 .card:hover .content {
     opacity: 1;               /* Show on hover */
+}
+
+#three-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+.banner-content {
+    z-index: 1;
+    position: relative;
 }
